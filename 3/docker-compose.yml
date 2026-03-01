@@ -1,0 +1,13 @@
+services:
+
+  fx:
+    image: nginx:alpine
+    ports:
+      - "8011:80"
+    volumes:
+      - ./fx-nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+
+  calc:
+    image: acuvity/mcp-server-calculator:latest
+    ports:
+      - "8012:8000"
